@@ -119,8 +119,8 @@ namespace Dice.Services {
             AtomMatrix.LedMatrix.Image.Clear();
             AtomMatrix.LedMatrix.Image.SetPixel(0, 0, _color);
             AtomMatrix.LedMatrix.Image.SetPixel(0, 4, _color);
-            AtomMatrix.LedMatrix.Image.SetPixel(2, 0, _color);
-            AtomMatrix.LedMatrix.Image.SetPixel(2, 4, _color);
+            AtomMatrix.LedMatrix.Image.SetPixel(0, 2, _color);
+            AtomMatrix.LedMatrix.Image.SetPixel(4, 2, _color);
             AtomMatrix.LedMatrix.Image.SetPixel(4, 0, _color);
             AtomMatrix.LedMatrix.Image.SetPixel(4, 4, _color);
             AtomMatrix.LedMatrix.Update();
