@@ -14,14 +14,18 @@ namespace Dice {
         public static void Main()
         {
             AccelerometerGyroscopeService ags = new AccelerometerGyroscopeService();
+            MatrixScreenService mtx = new MatrixScreenService(Color.DarkMagenta);
+            Random rnd = new Random();
+
             while (true)
             {
                 if (ags.CriticalMove())
                 {
-                    Debug.WriteLine("True");
+                    mtx.AnimationWhenThrowDice();
+                    mtx.DrawNumberOnScreen(rnd.Next(7) == 0 ? rnd.Next(7) + 1 : rnd.Next(7));
                 }
-                Debug.WriteLine("False");
             }
+
         }        
     }
 }

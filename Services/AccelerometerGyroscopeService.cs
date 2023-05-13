@@ -20,7 +20,7 @@ namespace Dice.Services {
         {
             if(Service.GetAccelerometer().X > sensitivity.AccPositiveX || Service.GetAccelerometer().X < sensitivity.AccNegativeX)
             {
-                Debug.WriteLine("Throw dice");
+                Debug.WriteLine("Throw dice on X axis");
                 return true;
             }
             Debug.WriteLine("No movement");
