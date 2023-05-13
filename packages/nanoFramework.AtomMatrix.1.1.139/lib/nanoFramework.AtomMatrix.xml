@@ -1,0 +1,94 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>nanoFramework.AtomMatrix</name>
+    </assembly>
+    <members>
+        <member name="T:nanoFramework.AtomMatrix.AtomMatrix">
+            <summary>
+            The AtomMatrix Board.
+            </summary>
+            <summary>
+            The AtomMatrix Board.
+            </summary>    
+        </member>
+        <member name="F:nanoFramework.AtomMatrix.AtomMatrix._rgbLedGpio">
+            <summary>
+            GPIO number of the neo pixel LED (from the datasheet).
+            </summary>
+        </member>
+        <member name="P:nanoFramework.AtomMatrix.AtomMatrix.AccelerometerGyroscope">
+            <summary>
+            Gets the Accelerometer and Gyroscope.
+            </summary>
+        </member>
+        <member name="P:nanoFramework.AtomMatrix.AtomMatrix.LedMatrix">
+            <summary>
+            RGB LED matrix (WS2812C).
+            </summary>
+        </member>
+        <member name="P:nanoFramework.AtomMatrix.AtomMatrix.Button">
+            <summary>
+            Main button.
+            </summary>
+        </member>
+        <member name="P:nanoFramework.AtomMatrix.AtomMatrix.GpioController">
+            <summary>
+            Gets the main <see cref="P:nanoFramework.AtomMatrix.AtomMatrix.GpioController"/>.
+            </summary>
+        </member>
+        <member name="P:nanoFramework.AtomMatrix.AtomMatrix.Dac1">
+            <summary>
+            Gets <see cref="T:System.Device.Dac.DacChannel"/> connected to GPIO 25.
+            </summary>
+        </member>
+        <member name="P:nanoFramework.AtomMatrix.AtomMatrix.Dac2">
+            <summary>
+            Gets <see cref="T:System.Device.Dac.DacChannel"/> connected to GPIO 26.
+            </summary>
+        </member>
+        <member name="M:nanoFramework.AtomMatrix.AtomMatrix.GetI2cDevice(System.Int32)">
+            <summary>
+            Gets an <see cref="T:System.Device.I2c.I2cDevice"/>.
+            </summary>
+            <param name="i2cDeviceAddress">The address of the <see cref="T:System.Device.I2c.I2cDevice"/> on the bus.</param>
+            <returns>The I2cDevice.</returns>
+        </member>
+        <member name="M:nanoFramework.AtomMatrix.AtomMatrix.GetGrove(System.Int32)">
+            <summary>
+            Gets an <see cref="T:System.Device.I2c.I2cDevice"/>.
+            </summary>
+            <param name="i2cDeviceAddress">The address of the <see cref="T:System.Device.I2c.I2cDevice"/> on the bus.</param>
+            <returns>The I2cDevice.</returns>
+        </member>
+        <member name="P:nanoFramework.AtomMatrix.AtomMatrix.InfraredLedSettings">
+            <summary>
+            Gets the infrared led settings.
+            </summary>
+            <remarks>
+            All changes made to <see cref="P:nanoFramework.AtomMatrix.AtomMatrix.InfraredLedSettings"/> are ignored once the <see cref="P:nanoFramework.AtomMatrix.AtomMatrix.InfraredLed"/> is initialized.
+            To make additional updates after the infrared channel is initialized, use the properties in <see cref="P:nanoFramework.AtomMatrix.AtomMatrix.InfraredLed"/>.
+            Disposing of <see cref="P:nanoFramework.AtomMatrix.AtomMatrix.InfraredLed"/> will free the channel and all changes made to <see cref="P:nanoFramework.AtomMatrix.AtomMatrix.InfraredLedSettings"/> will take effect when <see cref="P:nanoFramework.AtomMatrix.AtomMatrix.InfraredLed"/> is initialized again.
+            </remarks>
+        </member>
+        <member name="P:nanoFramework.AtomMatrix.AtomMatrix.InfraredLed">
+            <summary>
+            Gets the infrared led as a RMT transmitter channel.
+            </summary>
+        </member>
+        <member name="M:nanoFramework.AtomMatrix.AtomMatrix.GetSpiDevice(System.Int32)">
+            <summary>
+            Gets an <see cref="T:System.Device.Spi.SpiDevice"/>.
+            </summary>
+            <param name="chipSelect">The chip select of the device, needs to be any valid GPIO.</param>
+            <returns>An SpiDevice.</returns>
+        </member>
+        <member name="M:nanoFramework.AtomMatrix.AtomMatrix.GetAdcGpio(System.Int32)">
+            <summary>
+            Gets an <see cref="T:System.Device.Adc.AdcChannel"/>
+            </summary>
+            <param name="gpioNumber">The GPIO pin number where the <see cref="T:System.Device.Adc.AdcChannel"/> is connected to.</param>
+            <returns>An AdcChannel</returns>
+        </member>
+    </members>
+</doc>
