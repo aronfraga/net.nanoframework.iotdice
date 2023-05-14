@@ -17,7 +17,7 @@ A simple program for throw dice using C# .NET with nanoFramework!
 </p>
 
 <p align="center">
-Cectors used to recreate the animations
+Vectors used to recreate the animations
 </p>
 
 <p align="center">
