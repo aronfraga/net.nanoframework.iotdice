@@ -18,7 +18,9 @@
   </PropertyGroup>
   <Import Project="$(NanoFrameworkProjectSystemPath)NFProjectSystem.props" Condition="Exists('$(NanoFrameworkProjectSystemPath)NFProjectSystem.props')" />
   <ItemGroup>
-    <Compile Include="Models\Sensitive.cs" />
+    <Compile Include="Models\AnimationType.cs" />
+    <Compile Include="Models\Accelerometer.cs" />
+    <Compile Include="Models\Sensitivy.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\AccelerometerGyroscopeService.cs" />
@@ -29,7 +31,7 @@
       <HintPath>packages\nanoFramework.Iot.Device.Button.1.2.308\lib\Iot.Device.Button.dll</HintPath>
     </Reference>
     <Reference Include="Iot.Device.Mpu6886">
-      <HintPath>packages\nanoFramework.Iot.Device.Mpu6886.1.2.302\lib\Iot.Device.Mpu6886.dll</HintPath>
+      <HintPath>packages\nanoFramework.Iot.Device.Mpu6886.1.2.313\lib\Iot.Device.Mpu6886.dll</HintPath>
     </Reference>
     <Reference Include="Iot.Device.Ws28xx.Esp32">
       <HintPath>packages\nanoFramework.Iot.Device.Ws28xx.Esp32.1.2.308\lib\Iot.Device.Ws28xx.Esp32.dll</HintPath>

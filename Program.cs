@@ -1,3 +1,4 @@
+using Dice.Models;
 using Dice.Services;
 using Iot.Device.Mpu6886;
 using Iot.Device.Ws28xx.Esp32;
@@ -13,19 +14,25 @@ namespace Dice {
     public class Program {
         public static void Main()
         {
-            AccelerometerGyroscopeService ags = new AccelerometerGyroscopeService();
-            MatrixScreenService mtx = new MatrixScreenService(Color.DarkMagenta);
+            
+            MatrixScreenService mtx = new MatrixScreenService();
+            AccelerometerGyroscopeService ags = new AccelerometerGyroscopeService(Sensitivy.Medium, mtx);
             Random rnd = new Random();
 
+            mtx.Animation(AnimationType.Loader);
+            
             while (true)
             {
                 if (ags.CriticalMove())
                 {
-                    mtx.AnimationWhenThrowDice();
                     mtx.DrawNumberOnScreen(rnd.Next(7) == 0 ? rnd.Next(7) + 1 : rnd.Next(7));
+                }
+                if(ags.SaveDice())
+                {
+                    break;
                 }
             }
 
-        }        
+        }
     }
 }
