@@ -1,6 +1,5 @@
 ﻿using Dice.Device.Utilities;
 using nanoFramework.AtomMatrix;
-using System.Diagnostics;
 using System.Drawing;
 
 namespace Dice.Device.Abstractions
@@ -10,6 +9,7 @@ namespace Dice.Device.Abstractions
         private ScreenPattern screenPattern = new ScreenPattern();
         private Pattern _pattern;
         private Color _color;
+        private int lastSequence = 5;
 
         protected Screen(Pattern pattern, Color color)
         {
@@ -17,18 +17,47 @@ namespace Dice.Device.Abstractions
             _color = color;
         }
 
-        public void SetScreen()
+        public void DrawScreen()
         {
             short[] matrix = screenPattern.GetMatrixPattern(_pattern);
             AtomMatrix.LedMatrix.Image.Clear();
 
             for (int i = 0; i < matrix.Length; i += 2)
             {
-                AtomMatrix.LedMatrix.Image.SetPixel(matrix[i], matrix[i + 1], _color);
+                int xCoordinate = matrix[i];
+                int yCoordinate = matrix[i + 1];
+
+                AtomMatrix.LedMatrix.Image.SetPixel(xCoordinate, yCoordinate, _color);
             }
 
             AtomMatrix.LedMatrix.Update();
-            Debug.WriteLine("Screen Updated");
+        }
+
+        public void PlayAnimation()
+        {
+            short[] matrix = screenPattern.GetMatrixPattern(_pattern);
+            AtomMatrix.LedMatrix.Image.Clear();
+
+            for (int i = 0; i < matrix.Length; i += 2)
+            {
+                int xCoordinate = matrix[i];
+                int yCoordinate = matrix[i + 1];
+
+                if (xCoordinate != lastSequence && yCoordinate != lastSequence)
+                {
+                    AtomMatrix.LedMatrix.Image.SetPixel(xCoordinate, yCoordinate, _color);
+                }
+                else
+                {
+                    RefreshScreen();
+                }
+            }
+        }
+
+        private void RefreshScreen()
+        {
+            AtomMatrix.LedMatrix.Update();
+            AtomMatrix.LedMatrix.Image.Clear();
         }
     }
 }

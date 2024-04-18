@@ -19,6 +19,7 @@
   </PropertyGroup>
   <Import Project="$(NanoFrameworkProjectSystemPath)NFProjectSystem.props" Condition="Exists('$(NanoFrameworkProjectSystemPath)NFProjectSystem.props')" />
   <ItemGroup>
+    <Compile Include="Abstractions\Initial.cs" />
     <Compile Include="Abstractions\Motion.cs" />
     <Compile Include="Abstractions\Screen.cs" />
     <Compile Include="Initializer.cs" />
@@ -28,6 +29,7 @@
     <Compile Include="Services\ScreenService.cs" />
     <Compile Include="Utilities\AnimationTime.cs" />
     <Compile Include="Utilities\Pattern.cs" />
+    <Compile Include="Utilities\RandomNumber.cs" />
     <Compile Include="Utilities\ScreenPattern.cs" />
     <Compile Include="Utilities\Sensitivy.cs" />
     <Compile Include="Utilities\Setup.cs" />

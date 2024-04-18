@@ -15,9 +15,9 @@ namespace Dice.Device.Services
 
         private MotionService(Sensitivy sensitivy) : base()
         {
-            _accPositiveX = (int)sensitivy;
-            _accPositiveY = (int)sensitivy;
-            _accPositiveZ = (int)sensitivy;
+            _accPositiveX =  (int)sensitivy;
+            _accPositiveY =  (int)sensitivy;
+            _accPositiveZ =  (int)sensitivy;
             _accNegativeX = -(int)sensitivy;
             _accNegativeY = -(int)sensitivy;
             _accNegativeZ = -(int)sensitivy;
