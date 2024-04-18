@@ -24,7 +24,7 @@ namespace Dice.Device
 
         public void Start()
         {
-            bool shake = MotionService.CriticalMove(_setup.Sensitivy);
+            bool shake = MotionService.CriticalMove(_setup.Sensitivy); // ok
 
             if (shake)
             {

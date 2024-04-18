@@ -14,10 +14,10 @@ namespace Dice.Device
 
             while (true)
             {
-                initializer.Start();
+                initializer.Start(); // test class
             }
             
-            Thread.Sleep(Timeout.Infinite);
+            //Thread.Sleep(Timeout.Infinite);
         }
     }
 }
