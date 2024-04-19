@@ -9,7 +9,7 @@ namespace Dice.Device.Abstractions
         private ScreenPattern screenPattern = new ScreenPattern();
         private Pattern _pattern;
         private Color _color;
-        private int lastSequence = 5;
+        private int lastSequence = 5;     
 
         protected Screen(Pattern pattern, Color color)
         {
@@ -49,15 +49,10 @@ namespace Dice.Device.Abstractions
                 }
                 else
                 {
-                    RefreshScreen();
+                    AtomMatrix.LedMatrix.Update();
+                    AtomMatrix.LedMatrix.Image.Clear();              
                 }
             }
-        }
-
-        private void RefreshScreen()
-        {
-            AtomMatrix.LedMatrix.Update();
-            AtomMatrix.LedMatrix.Image.Clear();
         }
     }
 }

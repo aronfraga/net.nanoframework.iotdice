@@ -1,26 +1,62 @@
-﻿using Dice.Device.Services;
+﻿using Dice.Device.Abstractions;
+using Dice.Device.Services;
 using Dice.Device.Utilities;
+using System;
+using System.Drawing;
 
 namespace Dice.Device
 {
-    internal class Initializer
+    internal class Initializer : Miscellaneous
     {
-        private readonly Setup _setup;
+        private bool firstStart = true;
 
-        public Initializer()
+        public Initializer(Settings settings) : base(settings)
         {
-            _setup = new Setup(); // test
         }
 
         public void Start()
         {
-            bool shake = MotionService.CriticalMove(_setup.Sensitivy); // ok
+            try
+            {
+                SystemWarning();
+
+                if (canContinue)
+                {
+                    LoaderAnimation();
+                    MovementsAndScreen();
+                }   
+            }
+            catch (Exception ex)
+            {
+                Debugger(ex);
+            }
+        }
+
+        private void LoaderAnimation()
+        {
+            if (firstStart)
+            {
+                firstStart = false;
+                ScreenService.AnimationLoad(_settings.Color);
+            }   
+        }
+
+        private void MovementsAndScreen()
+        {
+            bool shake = MotionService.CriticalMove(_settings.Sensitivy); 
 
             if (shake)
+            {     
+                ScreenService.AnimationThrowDice(_settings.AnimationTime, _settings.Color); 
+                ScreenService.ResultThrowDice(_settings.Color); 
+            }
+        }
+
+        private void SystemWarning()
+        {
+            if (showWarning)
             {
-                ScreenService.AnimationLoad(_setup.Color); //ok
-                ScreenService.AnimationThrowDice(_setup.AnimationTime, _setup.Color); // ok
-                ScreenService.ResultThrowDice(_setup.Color); // ok
+                ScreenService.DrawOnScreen(Pattern.Warning, Color.Red);
             }
         }
     }

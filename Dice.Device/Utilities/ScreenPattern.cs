@@ -1,6 +1,6 @@
 ﻿namespace Dice.Device.Utilities
 {
-    internal sealed class ScreenPattern
+    internal class ScreenPattern
     {
         private readonly short[] NumberOne       = { 2, 2 };
         private readonly short[] NumberTwo       = { 0, 0, 4, 4 };
@@ -26,7 +26,7 @@
                                                      1, 1, 1, 2, 1, 3, 2, 1, 2, 3, 3, 2, 3, 3, 5, 5 };
 
         private readonly short[] HappyEmoticon   = { 0, 3, 1, 0, 1, 1, 1, 4, 2, 4, 3, 0, 3, 1, 3, 4, 4, 3 };
-        private readonly short[] TemperatureHigh = { 2, 0, 2, 1, 2, 2, 2, 4 };
+        private readonly short[] Warning         = { 2, 0, 2, 1, 2, 2, 2, 4 };
         private readonly short[] SystemError     = { };
 
         public short[] GetMatrixPattern(Pattern pattern)
@@ -42,7 +42,7 @@
                 Pattern.ThrowAnimation  => ThrowAnimation,
                 Pattern.LoadAnimation   => LoadAnimation,
                 Pattern.HappyEmoticon   => HappyEmoticon,
-                Pattern.TemperatureHigh => TemperatureHigh,
+                Pattern.Warning         => Warning,
                                       _ => SystemError
             };
         }

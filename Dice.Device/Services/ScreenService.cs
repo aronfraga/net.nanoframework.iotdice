@@ -1,7 +1,7 @@
 ﻿using Dice.Device.Abstractions;
 using Dice.Device.Utilities;
-using System;
 using System.Drawing;
+using System;
 
 namespace Dice.Device.Services
 {

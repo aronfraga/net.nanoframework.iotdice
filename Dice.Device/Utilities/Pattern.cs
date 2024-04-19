@@ -11,6 +11,6 @@
         ThrowAnimation = 7,
         LoadAnimation = 8,
         HappyEmoticon = 9,
-        TemperatureHigh = 10
+        Warning = 10
     }
 }
